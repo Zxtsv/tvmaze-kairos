@@ -10,4 +10,5 @@ public class Constants {
         public static String USER_AGENT_REST_CLIENT = "tvmaze-middleware/1.0";
     }
     public static final String ERROR_EXTERNAL_API = "Error communicating with TVMaze";
+    public static final String ERROR_EMPTY_RESPONSE_TVMAZE = "TVMaze returned an empty response for show: ";
 }
