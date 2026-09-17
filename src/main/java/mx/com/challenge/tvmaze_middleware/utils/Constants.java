@@ -11,4 +11,5 @@ public class Constants {
     }
     public static final String ERROR_EXTERNAL_API = "Error communicating with TVMaze";
     public static final String ERROR_EMPTY_RESPONSE_TVMAZE = "TVMaze returned an empty response for show: ";
+    public static final String ERROR_INVALID_REQUEST = "Invalid Request";
 }
