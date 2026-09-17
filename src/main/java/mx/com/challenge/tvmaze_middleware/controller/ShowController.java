@@ -1,6 +1,7 @@
 package mx.com.challenge.tvmaze_middleware.controller;
 
 import jakarta.validation.constraints.NotBlank;
+import mx.com.challenge.tvmaze_middleware.dto.response.ShowDetailResponse;
 import mx.com.challenge.tvmaze_middleware.dto.response.ShowSearchResponse;
 import mx.com.challenge.tvmaze_middleware.dto.tvmaze.TvMazeShow;
 import mx.com.challenge.tvmaze_middleware.service.ShowService;
@@ -26,7 +27,7 @@ public class ShowController {
     }
 
     @GetMapping("/{showId}")
-    public TvMazeShow getShowById(@PathVariable Long showId) {
+    public ShowDetailResponse getShowById(@PathVariable Long showId) {
         return showService.getShowById(showId);
     }
 }
