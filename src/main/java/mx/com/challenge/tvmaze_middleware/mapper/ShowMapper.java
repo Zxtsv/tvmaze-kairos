@@ -2,7 +2,6 @@ package mx.com.challenge.tvmaze_middleware.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import mx.com.challenge.tvmaze_middleware.dto.response.ShowSearchResponse;
-import mx.com.challenge.tvmaze_middleware.dto.tvmaze.TvMazeChannel;
 import mx.com.challenge.tvmaze_middleware.dto.tvmaze.TvMazeShow;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +22,14 @@ public class ShowMapper {
 
     private String resolveChannel(TvMazeShow show) {
         log.info("[+] Resolve Channel: {}", show.toString());
-        TvMazeChannel channel = show.network() != null ? show.network() : show.webChannel();
+        if (show.network() != null) {
+            return show.network().name();
+        }
 
-        return channel != null ? channel.name() : null;
+        if (show.webChannel() != null) {
+            return show.webChannel().name();
+        }
+
+        return null;
     }
 }

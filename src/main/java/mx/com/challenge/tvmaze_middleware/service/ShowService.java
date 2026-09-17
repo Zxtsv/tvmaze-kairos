@@ -3,6 +3,7 @@ package mx.com.challenge.tvmaze_middleware.service;
 import lombok.extern.slf4j.Slf4j;
 import mx.com.challenge.tvmaze_middleware.client.TvMazeClient;
 import mx.com.challenge.tvmaze_middleware.dto.response.ShowSearchResponse;
+import mx.com.challenge.tvmaze_middleware.dto.tvmaze.TvMazeShow;
 import mx.com.challenge.tvmaze_middleware.mapper.ShowMapper;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,9 @@ public class ShowService {
                 .filter(Objects::nonNull)
                 .map(showMapper::toSearchResponse)
                 .toList();
+    }
+
+    public TvMazeShow getShowById(Long showId) {
+        return tvMazeClient.getShowById(showId);
     }
 }
